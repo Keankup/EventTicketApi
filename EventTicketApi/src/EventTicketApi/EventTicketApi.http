@@ -1,0 +1,25 @@
+@EventTicketApi_HostAddress = http://localhost:5151
+@baseUrl = {{EventTicketApi_HostAddress}}
+### Создать клиента
+POST {{baseUrl}}/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "Мария",
+  "lastName": "Кузнецова",
+  "birthDate": "1995-05-20",
+  "email": "kuznetsova@test.com",
+  "phone": "+79001234567"
+}
+
+### неверным email
+POST {{baseUrl}}/api/customers
+Content-Type: application/json
+
+{
+  "firstName": "Тест",
+  "lastName": "Ошибка",
+  "birthDate": "1995-05-20",
+  "email": "не-похоже-на-почту",
+  "phone": "123"
+}
